@@ -1,0 +1,140 @@
+1)
+import java.util.Scanner;
+
+public class MinFinder {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(), min = Integer.MAX_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            min = Math.min(min, sc.nextInt());
+        }
+
+        System.out.println(min);
+        sc.close();
+    }
+}
+
+
+2)
+public static double findAverage(int[] arr) {
+        double sum = 0;
+        for (int num : arr) sum += num;
+        return sum / arr.length;
+    }
+    
+3)
+import java.util.Scanner;
+
+public class PrimeChecker {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(isPrime(n) ? "Prime" : "Composite");
+        sc.close();
+    }
+
+    static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i * i <= n; i++)
+            if (n % i == 0) return false;
+        return true;
+    }
+}
+
+
+4)
+ public static long factorial(int n) {
+        if (n == 0  n == 1) return 1;
+        return n * factorial(n - 1);
+    }
+    
+5)
+public class Fibonacci {
+    public static int fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(fibonacci(5));
+        System.out.println(fibonacci(17));
+    }
+}
+
+6)
+public class PowerFunction {
+    public static int power(int a, int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return a * power(a, n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(power(2, 10));
+    }
+}
+
+7)
+public class StringPermutations {
+    public static void permute(String str, String result) {
+        if (str.length() == 0) {
+            System.out.println(result);
+            return;
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            String remaining = str.substring(0, i) + str.substring(i + 1);
+            permute(remaining, result + ch);
+        }
+    }
+
+    public static void main(String[] args) {
+        String input = "IOX";
+        permute(input, "");
+    }
+}
+
+8)
+ public static boolean isNumeric(String s) {
+        return s.matches("\\d+");
+    }
+
+9)
+ public static int binomialCoefficient(int n, int k) {
+        if (k == 0  k == n) return 1;
+        return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
+    }
+
+10)
+import java.util.Scanner;
+
+public class GCDRecursion {
+
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter two numbers: ");
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        scanner.close();
+
+        System.out.println("GCD(" + a + ", " + b + ") = " + gcd(a, b));
+    }
+}
+
+
